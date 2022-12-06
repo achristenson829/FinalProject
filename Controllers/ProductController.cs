@@ -17,14 +17,5 @@ namespace Northwind.Controllers
             ViewBag.id = id;
             return View(_northwindContext.Categories.OrderBy(c => c.CategoryName));
         }
-        public IActionResult Discounts() => View(_northwindContext.Discounts.Where(d => d.StartTime <= DateTime.Now && d.EndTime > DateTime.Now));
-        [Authorize(Roles = "northwind-employee")]
-        public IActionResult EditDiscount() => View(_northwindContext.Discounts.OrderBy(d => d.DiscountId));
-        [Authorize(Roles = "northwind-employee"), HttpPost, ValidateAntiForgeryToken]
-        public IActionResult EditDiscount(Discount discount)
-            {
-                _northwindContext.EditDiscount(discount);
-                return RedirectToAction("Index", "Home");
-            }
     }
 }
