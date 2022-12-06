@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/882b7570-362f-4fac-bbce-5c2171d26806/AppServices/subscriptions/882b7570-362f-4fac-bbce-5c2171d26806/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/Northwind-16-ALC",
+    "appService.deploySubpath": "bin"
+}
