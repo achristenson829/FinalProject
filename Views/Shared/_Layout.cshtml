@@ -58,6 +58,22 @@
                                 }
                             </div>
                         </li>
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="employeeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-house-user"></i> Employees
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="employeeDropdown">
+                                @if (User?.Identity?.IsAuthenticated ?? false)
+                                {
+                                    <a class="dropdown-item" asp-controller="Employee" asp-action="ManageDiscounts"><i class="fas fa-percent"></i> Manage Discounts</a>
+                                    <a class="dropdown-item" asp-controller="Account" asp-action="Logout"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+                                }
+                                else
+                                {            
+                                    <a class="dropdown-item" asp-controller="Account" asp-action="Login"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+                                }
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 @if (User?.Identity?.IsAuthenticated ?? false)
